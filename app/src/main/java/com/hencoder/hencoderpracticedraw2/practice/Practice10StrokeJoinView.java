@@ -3,6 +3,7 @@ package com.hencoder.hencoderpracticedraw2.practice;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Paint.Join;
 import android.graphics.Path;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -42,14 +43,17 @@ public class Practice10StrokeJoinView extends View {
 
         canvas.translate(100, 100);
         // 第一种形状：MITER
+        paint.setStrokeJoin(Join.MITER);
         canvas.drawPath(path, paint);
 
         canvas.translate(300, 0);
         // 第二种形状：BEVEL
+        paint.setStrokeJoin(Join.BEVEL);
         canvas.drawPath(path, paint);
 
         canvas.translate(300, 0);
         // 第三种形状：ROUND
+        paint.setStrokeJoin(Join.ROUND);
         canvas.drawPath(path, paint);
 
         canvas.restore();
